@@ -14,8 +14,8 @@ public class Task01 {
         for (int i = 0; i < numbersArray.length; i++) {
             numbersArray[i] = scanner.nextInt();
         }
-        float average;
-        float sum = 0;
+        double average;
+        double sum = 0;
         for (int value : numbersArray) {
             sum += value;
         }

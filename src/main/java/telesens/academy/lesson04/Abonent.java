@@ -90,9 +90,6 @@ public class Abonent {
     }
 
     boolean isEqualsById(Abonent abonent) {
-        if (this.id == abonent.id && this.id != -1)
-            return true;
-        else
-            return false;
+        return (this.id == abonent.id && this.id != -1);
     }
 }
