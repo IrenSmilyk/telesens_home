@@ -13,24 +13,18 @@ package telesens.academy.lesson01;
 
 public class Task09 {
     public static void main(String[] args) {
+        String pref = "";
+        String post = "";
         if (args.length == 1) {
-            String pref = args[0];
-            System.out.println(pref + " Привет!");
-            System.out.println(pref + " Это моя первая программа. Я пишу на Java.");
-            System.out.println(pref + " Программировать - это интересно.");
-            System.out.println(pref + " Моя цель-научиться писать тесты для автоматизации тестирования.");
+            pref = args[0];
+
         } else if (args.length == 2) {
-            String pref = args[0];
-            String post = args[1];
-            System.out.println(pref + " Привет! " + post);
-            System.out.println(pref + " Это моя первая программа. Я пишу на Java. " + post);
-            System.out.println(pref + " Программировать - это интересно. " + post);
-            System.out.println(pref + " Моя цель-научиться писать тесты для автоматизации тестирования. " + post);
-        } else {
-            System.out.println("Привет!");
-            System.out.println("Это моя первая программа. Я пишу на Java.");
-            System.out.println("Программировать - это интересно.");
-            System.out.println("Моя цель-научиться писать тесты для автоматизации тестирования.");
+            pref = args[0];
+            post = args[1];
         }
+        System.out.println(pref + " Привет! " + post);
+        System.out.println(pref + " Это моя первая программа. Я пишу на Java. " + post);
+        System.out.println(pref + " Программировать - это интересно. " + post);
+        System.out.println(pref + " Моя цель-научиться писать тесты для автоматизации тестирования. " + post);
     }
 }

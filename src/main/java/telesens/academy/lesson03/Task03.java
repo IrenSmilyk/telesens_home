@@ -12,8 +12,8 @@ public class Task03 {
         Scanner scanner = new Scanner(System.in);
         String str = getString(scanner);
         String subStr = getSubString(scanner);
-        System.out.print("Исходная строка: " + str);
-        System.out.println("\nИсходная подстрока: " + subStr);
+        System.out.println("Исходная строка: " + str);
+        System.out.println("Исходная подстрока: " + subStr);
         System.out.print("Кол-во вхождений подстроки в строку: " + getCount(str, subStr));
     }
 

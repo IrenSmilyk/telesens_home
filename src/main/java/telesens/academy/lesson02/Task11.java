@@ -15,20 +15,20 @@ public class Task11 {
         System.out.print("Введите размерность матрицы: ");
         Scanner input = new Scanner(System.in);
         int length = input.nextInt();
-        int [] array = new int[length];
+        int[] array = new int[length];
         Random ran = new Random();
         for (int i = 0; i < array.length; i++) {
-            array[i]=ran.nextInt(100);
+            array[i] = ran.nextInt(100);
         }
         System.out.println("Массив, заполненный произвольными числами:");
         for (int value : array) {
             System.out.print(value + " ");
         }
         System.out.println();
-        int i=0;
-        while (i<array.length){
-           System.out.print(""+array[i] + " ");
-           i++;
-       }
+        int i = 0;
+        while (i < array.length) {
+            System.out.print(array[i] + " ");
+            i++;
+        }
     }
 }
