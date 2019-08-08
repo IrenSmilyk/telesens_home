@@ -108,7 +108,7 @@ public class DateTime extends Date {
         System.out.println(hours+":" + minutes +":"+ seconds);
     }
 
-    public void  printTime(boolean isTimeFormat12) {
-        System.out.println(hours+":" + minutes +":"+ seconds);
+    public void  printDateTime() {
+        System.out.println(getDay()+"."+getMonth()+"."+getYear()+" "+hours+":" + minutes +":"+ seconds);
     }
 }
