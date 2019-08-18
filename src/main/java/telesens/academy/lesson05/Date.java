@@ -1,5 +1,7 @@
 package telesens.academy.lesson05;
 
+import telesens.academy.lesson08.IllegalDateException;
+
 import java.util.Objects;
 
 public class Date {
@@ -15,14 +17,26 @@ public class Date {
     }
 
     //конструктор инициализирует все поля public Date(int day, int month, int year)
-    public Date(int day, int month, int year) {
-        this.day = day;
-        this.month = month;
-        this.year = year;
+    public Date(int day, int month, int year) throws IllegalDateException {
+        if (day >= 1 && day <= 31) {
+            this.day = day;
+        } else {
+            throw new IllegalDateException();
+        }
+        if (month >= 1 && month <= 12) {
+            this.month = month;
+        } else {
+            throw new IllegalDateException();
+        }
+        if (year > 0) {
+            this.year = year;
+        } else {
+            throw new IllegalDateException();
+        }
     }
 
     //конструктор копирования public Date(Date date)
-    public Date(Date date) {
+    public Date(Date date) throws IllegalDateException {
         new Date(date.getDay(), date.getMonth(), date.getYear());
     }
 

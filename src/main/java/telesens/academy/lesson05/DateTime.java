@@ -1,5 +1,7 @@
 package telesens.academy.lesson05;
 
+import telesens.academy.lesson08.IllegalTimeException;
+
 import java.util.Objects;
 
 public class DateTime extends Date {
@@ -7,17 +9,29 @@ public class DateTime extends Date {
     private int minutes;
     private int seconds;
 
-    public DateTime(int hours, int minutes, int seconds) {
-        this.hours = hours;
-        this.minutes = minutes;
-        this.seconds = seconds;
+    public DateTime(int hours, int minutes, int seconds) throws IllegalTimeException {
+        if (hours >= 0 && hours <= 24){
+            this.hours = hours;
+        } else {
+            throw new IllegalTimeException();
+        }
+        if (minutes >= 0 && minutes <= 60) {
+            this.minutes = minutes;
+        } else {
+            throw new IllegalTimeException();
+        }
+        if (seconds >= 0 && seconds <= 60) {
+            this.seconds = seconds;
+        } else {
+            throw new IllegalTimeException();
+        }
     }
 
     public DateTime() {
     }
 
-    public DateTime(DateTime dateTime) {
-        new Date(dateTime.getHours(), dateTime.getMinutes(), dateTime.getSeconds());
+    public DateTime(DateTime dateTime) throws IllegalTimeException {
+        new DateTime(dateTime.getHours(), dateTime.getMinutes(), dateTime.getSeconds());
     }
 
     public int getHours() {
