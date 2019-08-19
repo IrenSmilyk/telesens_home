@@ -37,7 +37,7 @@ public class DemoCollection {
             count++;
         }
         System.out.println(namesList);
-        //Вывести все имена, начинающиеся на букву A
+                //Вывести все имена, начинающиеся на букву A
         for (String s : namesList) {
             if (s.charAt(0) == 'A' || s.charAt(0) == 'a') {
                 System.out.print(s + " ");
