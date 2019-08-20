@@ -23,23 +23,32 @@ public class DemoCollection2 {
         }
         System.out.println(namesList);
         //вывести минимальное, максимально значения
-        System.out.println("MAX= " + Collections.max(namesList));
+        /*System.out.println("MAX= " + Collections.max(namesList));
         System.out.println("MIN= " + Collections.min(namesList));
         //вывести сумму чисел на экран
-        System.out.println("SUM= " + namesList.stream().mapToInt(Integer::intValue).sum());
+        System.out.println("SUM= " + namesList.stream().mapToInt(Integer::intValue).sum());*/
 //найти наиболее часто встречающееся число, вывести это число и кол-во повторений на экран
 //		(если чисел несколько с одинаковой частотой повторений, то вывести минимальное из
         Set<Integer> unique = new HashSet<>(namesList);
-        int d=0;
-        int k = 0;
+        int numberOfRepetitions = 0;
+        int k = 0;//флаг, для проверки есть ли повторяющиеся числа
+        int max = 2;
         for (Integer x : unique) {
-            d = Collections.frequency(namesList, x);
-            if (d > 1) {
-                namesList2.add(x);
-                k = 1;
+            numberOfRepetitions = Collections.frequency(namesList, x);
+            if (numberOfRepetitions > max) {
+                max = numberOfRepetitions;
             }
         }
-        if (k != 1) System.out.println("Повторяющихся цисел нет");
+        for (Integer x : unique) {
+            numberOfRepetitions = Collections.frequency(namesList, x);
+            System.out.println(numberOfRepetitions+" "+x);
+              if (numberOfRepetitions == max) {
+              namesList2.add(x);
+              k=1;
+            }
+        }
+
+        if (k != 1) System.out.println("Повторяющихся чисел нет");
         else {
             System.out.println("Повторяющиеся числа: " + namesList2);
             System.out.println("Минимальное цисло из повторяющихся цисел: " + Collections.min(namesList2));
