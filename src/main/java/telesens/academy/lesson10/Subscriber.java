@@ -93,6 +93,28 @@ public class Subscriber implements Comparable<Subscriber> {
 
     @Override
     public int compareTo(Subscriber o) {
-        return 0;
+        Operator operator1 = this.operator;
+        Operator operator2 = o.operator;
+        Integer age1 = this.age;
+        Integer age2 = o.age;
+        String lastName = this.lastName;
+        String lastName2 = o.lastName;
+        String firstName = this.firstName;
+        String firstName2 = o.firstName;
+        if (operator1.compareTo(operator2)==0) {
+          //  return Integer.compare(age1, age2);
+            if (age1.compareTo(age2)==0) {
+                if (lastName.compareTo(lastName2)==0) {
+                    return firstName.compareTo(firstName2);
+                } else {
+                    return lastName.compareTo(lastName2);
+                }
+            } else {
+                return age1.compareTo(age2);
+            }
+
+        } else {
+            return operator1.compareTo(operator2);
+        }
     }
 }

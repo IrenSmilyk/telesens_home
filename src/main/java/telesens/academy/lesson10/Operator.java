@@ -1,6 +1,6 @@
 package telesens.academy.lesson10;
 
-public class Operator {
+public class Operator implements Comparable <Operator> {
     private Long id;
     private String name;
 
@@ -23,5 +23,21 @@ public class Operator {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public int compareTo(Operator other) {
+        String name=this.name;
+        String name2=other.name;
+        return name.compareTo(name2);
+
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
     }
 }
