@@ -1,7 +1,8 @@
 package telesens.academy.lesson10;
 
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.DataFormat;
 import org.apache.poi.xssf.usermodel.XSSFCell;
@@ -146,16 +147,20 @@ public class DemoFile {
                     break;
             }
 
+
             assert subscriberXlsxUrl != null;
             try (FileOutputStream out = new FileOutputStream(new File(subscriberXlsxUrl))) {
                 workbook.write(out);
+                LOG.info(workbook.getMapInfo());
+
             } catch (Exception e) {
                 e.printStackTrace();
             }
 
+
         }
 
-        //Прочитать subscribers.xlsx в коллекцию Map<Long, Subscriber> и сохранить в текстовый файл: subscribers.txt
+       /* //Прочитать subscribers.xlsx в коллекцию Map<Long, Subscriber> и сохранить в текстовый файл: subscribers.txt
         Map<Long, Subscriber> map = new HashMap<>();
         try (XSSFWorkbook workbook1 = new XSSFWorkbook(new FileInputStream(subscriberXlsxUrl))) {
             XSSFSheet sheet1 = workbook1.getSheet("Demo");
@@ -274,7 +279,7 @@ public class DemoFile {
         catch(Exception ex){
 
             System.out.println(ex.getMessage());
-        }
+        }*/
     }
 
     private static String getValue2(ArrayList<String> arrayList, XSSFCell xssfCell, int random) {
