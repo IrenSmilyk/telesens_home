@@ -160,7 +160,7 @@ public class DemoFile {
 
         }
 
-       /* //Прочитать subscribers.xlsx в коллекцию Map<Long, Subscriber> и сохранить в текстовый файл: subscribers.txt
+        //Прочитать subscribers.xlsx в коллекцию Map<Long, Subscriber> и сохранить в текстовый файл: subscribers.txt
         Map<Long, Subscriber> map = new HashMap<>();
         try (XSSFWorkbook workbook1 = new XSSFWorkbook(new FileInputStream(subscriberXlsxUrl))) {
             XSSFSheet sheet1 = workbook1.getSheet("Demo");
@@ -279,7 +279,7 @@ public class DemoFile {
         catch(Exception ex){
 
             System.out.println(ex.getMessage());
-        }*/
+        }
     }
 
     private static String getValue2(ArrayList<String> arrayList, XSSFCell xssfCell, int random) {
@@ -290,9 +290,6 @@ public class DemoFile {
 
     private static String getValue(ArrayList<String> arrayList, Random myRandomizer, XSSFCell xssfCell) {
         int random = myRandomizer.nextInt(arrayList.size());
-        // получаем рандомное число
-       /* String randomLastname = arrayList.get(random);
-        xssfCell.setCellValue(randomLastname);*/
         return getValue2(arrayList,xssfCell,random);
     }
 
